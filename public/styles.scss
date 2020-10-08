@@ -1,0 +1,131 @@
+$spacer: 16px !default;
+$sizes: (
+  ('0', 0),
+  ('1', ($spacer * 0.25)),
+  ('2', ($spacer * 0.5)),
+  ('3', ($spacer)),
+  ('4', ($spacer * 1.5)),
+  ('5', ($spacer * 3)),
+  ('auto', 'auto'),
+);
+
+$positions: (
+('t', 'top',),
+('l', 'left'),
+('b', 'bottom'),
+('r', 'right'),
+);
+
+$positionsRatio: (
+('x', 'left', 'right'),
+('y', 'top', 'bottom')
+);
+
+@each $size in $sizes {
+  $sizeKey: nth($size, 1);
+  $sizeValue: nth($size, 2);
+
+  .m-#{$sizeKey} {
+    margin: $sizeValue;
+  }
+
+  .p-#{$sizeKey} {
+    padding: $sizeValue;
+  }
+
+  .m-#{$sizeKey}-mobile {
+    @media screen and (max-width: 768px) {
+      margin: $sizeValue;
+    }
+  }
+
+  .p-#{$sizeKey}-mobile {
+    @media screen and (max-width: 768px) {
+      padding: $sizeValue;
+    }
+  }
+
+  @each $position in $positions {
+    $positionKey: nth($position, 1);
+    $positionValue: nth($position, 2);
+    .m#{$positionKey}-#{$sizeKey} {
+      margin-#{$positionValue}: $sizeValue;
+    }
+
+    .p#{$positionKey}-#{$sizeKey} {
+      padding-#{$positionValue}: $sizeValue;
+    }
+
+    .m#{$positionKey}-#{$sizeKey}-mb {
+      @media screen and (max-width: 768px) {
+        margin-#{$positionValue}: $sizeValue;
+      }
+    }
+
+    .p#{$positionKey}-#{$sizeKey}-mb {
+      @media screen and (max-width: 768px) {
+        padding-#{$positionValue}: $sizeValue;
+      }
+    }
+  }
+  @each $position in $positionsRatio {
+    $positionKey: nth($position, 1);
+    $positionValue1: nth($position, 2);
+    $positionValue2: nth($position, 3);
+
+    .m#{$positionKey}-#{$sizeKey} {
+      margin-#{$positionValue1}: $sizeValue;
+      margin-#{$positionValue2}: $sizeValue;
+    }
+
+    .p#{$positionKey}-#{$sizeKey} {
+      padding-#{$positionValue1}: $sizeValue;
+      padding-#{$positionValue2}: $sizeValue;
+    }
+
+    .m#{$positionKey}-#{$sizeKey}-mb {
+      @media screen and (max-width: 768px) {
+        margin-#{$positionValue1}: $sizeValue;
+        margin-#{$positionValue2}: $sizeValue;
+      }
+    }
+
+    .p#{$positionKey}-#{$sizeKey}-mb {
+      @media screen and (max-width: 768px) {
+        padding-#{$positionValue1}: $sizeValue;
+        padding-#{$positionValue2}: $sizeValue;
+      }
+    }
+  }
+}
+
+$colors: (
+  ('primary', #ED6808),
+  ('secondary', #FFF6EB),
+  ('success', #00B14F),
+  ('danger', #FF4949),
+  ('darkGray', #3B4757),
+  ('lightGray', #AAAAAA),
+  ('black', #253137),
+  ('white', #fff),
+  ('link', #ED6808),
+  ('link-hover', #ED6808),
+  ('link-disabled', #90A4AD),
+
+);
+
+@each $color in $colors {
+  $colorKey: nth($color, 1);
+  $colorValue: nth($color, 2);
+  .text-#{$colorKey} {
+    color: $colorValue;
+  }
+
+  .bg-#{$colorKey} {
+    background-color: $colorValue;
+  }
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}

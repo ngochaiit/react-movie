@@ -24,14 +24,10 @@ const style = (theme) => ({
   },
 })
 
-const TopBar = ({ classes, onOpenNavBarMobile }) => {
-//   const { user } = useUser()
-console.log('chay topbar')
-
-  return (
-    <AppBar className={classes.appBar}>
-      <Toolbar>
-        {
+const TopBar = ({ classes, onOpenNavBarMobile }) => (
+  <AppBar className={classes.appBar}>
+    <Toolbar>
+      {
           onOpenNavBarMobile && (
           <IconButton
             className={classes.menu}
@@ -42,17 +38,16 @@ console.log('chay topbar')
           </IconButton>
           )
         }
-        {/* href={user.data && Object.values(user.data).find((x) => x) ? '/shipment' : '/'} */}
-        <Link href="/">
-          <img
-            alt="Logo"
-            src="/images/logo.png"
-          />
-        </Link>
-      </Toolbar>
-    </AppBar>
+      {/* href={user.data && Object.values(user.data).find((x) => x) ? '/shipment' : '/'} */}
+      <Link href="/">
+        <img
+          alt="Logo"
+          src="/images/logo.png"
+        />
+      </Link>
+    </Toolbar>
+  </AppBar>
   )
-}
 
 TopBar.defaultProps = {
   onOpenNavBarMobile: null,

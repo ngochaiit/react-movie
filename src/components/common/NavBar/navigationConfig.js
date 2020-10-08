@@ -4,7 +4,7 @@ import {
 
   export default [
     {
-      title: 'SHIPMENT MANAGEMENT',
+      title: 'SHIPMENT CATEGORY MOVIE',
       pages: [
         {
           title: 'Shipment Orders',

@@ -10,7 +10,7 @@ import { matchPath } from '~/utils/router'
 // import { useUser } from '~/redux/hooks/user'
 
 const reduceChildRoutes = ({
-  router, items, page, depth, data,
+  router, items, page, depth,
 }) => {
   if (page.children) {
     const open = matchPath(router.pathname, {
@@ -44,19 +44,13 @@ const reduceChildRoutes = ({
         label={page.label}
         title={page.title}
         pathname={router.pathname}
-        data={data[page.href.replace('/', '')]}
       />,
+
     )
   }
 
   return items
 }
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBottom: theme.spacing(3),
-  },
-}))
 
 const NavigationList = ({ pages, ...rest }) => (
   <List>
@@ -75,24 +69,18 @@ NavigationList.propTypes = {
 
 const Navigation = ({
   title, pages, router, ...rest
-}) => {
-  const classes = useStyles()
-
-  return (
-    <div
-      {...rest}
-      className={classes.root}
-    >
-      {title && <Typography variant="caption">{title}</Typography>}
-      <NavigationList
-        depth={0}
-        pages={pages}
-        router={router}
-
-      />
-    </div>
+}) => (
+  <div
+    {...rest}
+  >
+    {title && <Typography variant="caption">{title}</Typography>}
+    <NavigationList
+      depth={0}
+      pages={pages}
+      router={router}
+    />
+  </div>
   )
-}
 
 Navigation.defaultProps = {
 }

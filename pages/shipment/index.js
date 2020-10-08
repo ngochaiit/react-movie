@@ -1,3 +1,3 @@
-import ShipmentList from '../src/components/Homepage'
+import ShipmentList from '~/components/Shipment'
 
 export default ShipmentList
