@@ -1,22 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, Container } from '@material-ui/core'
+import { Container } from '@material-ui/core'
+// import { withStyles } from '@material-ui/core/styles'
 import TopBar from '~/components/common/TopBar'
 import NavBar from '~/components/common/NavBar'
 import style from './style'
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    position: 'relative',
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
-  content: {
-    overflowY: 'auto',
-    flex: 1,
-    padding: theme.spacing(2),
-  },
-}))
+const useStyles = () => ({
+
+})
 const Layout = ({
    children, maxWidth,
 }) => {
