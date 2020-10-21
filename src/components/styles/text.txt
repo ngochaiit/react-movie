@@ -1,7 +1,1 @@
-Den con khi cung hieu duoc lenh git
-lay noi dung cua remote repository
-Con Cho nay
-con ga nay that la ngu
-Con Cho nay
-[Feature2] - chung ta add vao 2
-[feature/CDA3] - thay doi cua nhanh 3
+what are you doing right now?
