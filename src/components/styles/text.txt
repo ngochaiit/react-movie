@@ -1,3 +1,4 @@
 Den con khi cung hieu duoc lenh git
 lay noi dung cua remote repository
 Con Cho nay
+con ga nay that la ngu
